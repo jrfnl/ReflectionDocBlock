@@ -22,8 +22,8 @@ use phpDocumentor\Reflection\DocBlock\Tags\Reference\Fqsen as TagsFqsen;
 use phpDocumentor\Reflection\DocBlock\Tags\Reference\Url as UrlRef;
 use phpDocumentor\Reflection\Fqsen;
 use phpDocumentor\Reflection\FqsenResolver;
+use phpDocumentor\Reflection\TestCase;
 use phpDocumentor\Reflection\Types\Context;
-use PHPUnit\Framework\TestCase;
 
 /**
  * @coversDefaultClass \phpDocumentor\Reflection\DocBlock\Tags\See

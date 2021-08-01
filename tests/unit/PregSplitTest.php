@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace phpDocumentor\Reflection;
 
 use phpDocumentor\Reflection\Exception\PcreException;
-use PHPUnit\Framework\TestCase;
 use function set_error_handler;
 use const E_WARNING;
 

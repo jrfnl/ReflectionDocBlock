@@ -14,7 +14,6 @@ declare(strict_types=1);
 namespace phpDocumentor\Reflection;
 
 use Mockery as m;
-use PHPUnit\Framework\TestCase;
 
 /**
  * @coversNothing

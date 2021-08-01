@@ -6,7 +6,7 @@ namespace phpDocumentor\Reflection\DocBlock\Tags;
 
 use Exception;
 use InvalidArgumentException;
-use PHPUnit\Framework\TestCase;
+use phpDocumentor\Reflection\TestCase;
 use Throwable;
 use function fopen;
 use function serialize;

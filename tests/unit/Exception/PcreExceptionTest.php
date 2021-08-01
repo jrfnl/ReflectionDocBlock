@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace phpDocumentor\Reflection\Exception;
 
-use PHPUnit\Framework\TestCase;
+use phpDocumentor\Reflection\TestCase;
 use const PREG_BACKTRACK_LIMIT_ERROR;
 use const PREG_BAD_UTF8_ERROR;
 use const PREG_BAD_UTF8_OFFSET_ERROR;

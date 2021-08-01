@@ -6,7 +6,7 @@ namespace phpDocumentor\Reflection\DocBlock;
 
 use Mockery as m;
 use phpDocumentor\Reflection\DocBlock\Tags\Example;
-use PHPUnit\Framework\TestCase;
+use phpDocumentor\Reflection\TestCase;
 
 /**
  * @coversDefaultClass \phpDocumentor\Reflection\DocBlock\ExampleFinder
