@@ -20,7 +20,6 @@ use phpDocumentor\Reflection\DocBlock\Tag;
 use phpDocumentor\Reflection\DocBlock\TagFactory;
 use phpDocumentor\Reflection\DocBlock\Tags\Param;
 use phpDocumentor\Reflection\Types\Context;
-use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
 /**
@@ -166,6 +165,10 @@ that contains a code block.
     See here: a CodeBlock
 DESCRIPTION;
 
+        // Normalize line endings in case the file is checked out on Windows with git `core.autocrlf true`.
+        $given = static::normalizeLE($given);
+        $description = static::normalizeLE($description);
+
         $docblock = $fixture->create($given);
 
         $this->assertEquals(new Description($description), $docblock->getDescription());
@@ -184,6 +187,9 @@ DESCRIPTION;
 @author Mike van Riel <me@mikevanriel.com> This is with
   multiline description.
 TAG;
+
+        // Normalize line endings in case the file is checked out on Windows with git `core.autocrlf true`.
+        $tagString = static::normalizeLE($tagString);
 
         $tag        = m::mock(Tag::class);
         $tagFactory = m::mock(TagFactory::class);

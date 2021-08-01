@@ -18,7 +18,6 @@ use phpDocumentor\Reflection\DocBlock\Description;
 use phpDocumentor\Reflection\DocBlock\StandardTagFactory;
 use phpDocumentor\Reflection\DocBlock\Tag;
 use phpDocumentor\Reflection\DocBlock\Tags\See;
-use PHPUnit\Framework\TestCase;
 
 /**
  * @coversNothing
@@ -79,7 +78,7 @@ DESCRIPTION;
         $this->assertInstanceOf(DocBlock::class, $docblock);
         $this->assertSame('This is an example of a summary.', $summary);
         $this->assertInstanceOf(Description::class, $description);
-        $this->assertSame($descriptionText, $description->render());
+        $this->assertSameIgnoreLineEndings($descriptionText, $description->render());
         $this->assertEmpty($docblock->getTags());
     }
 
@@ -123,7 +122,7 @@ DESCRIPTION;
 
         include(__DIR__ . '/../../examples/playing-with-descriptions/02-escaping.php');
 
-        $this->assertSame(
+        $this->assertSameIgnoreLineEndings(
             <<<'DESCRIPTION'
 You can escape the @-sign by surrounding it with braces, for example: @. And escape a closing brace within an
 inline tag by adding an opening brace in front of it like this: }.

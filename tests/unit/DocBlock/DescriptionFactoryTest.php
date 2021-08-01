@@ -17,8 +17,8 @@ use Exception;
 use Mockery as m;
 use phpDocumentor\Reflection\DocBlock\Tags\InvalidTag;
 use phpDocumentor\Reflection\DocBlock\Tags\Link as LinkTag;
+use phpDocumentor\Reflection\TestCase;
 use phpDocumentor\Reflection\Types\Context;
-use PHPUnit\Framework\TestCase;
 
 /**
  * @coversDefaultClass \phpDocumentor\Reflection\DocBlock\DescriptionFactory
@@ -192,7 +192,7 @@ DESCRIPTION;
 
         $description = $factory->create($descriptionText, new Context(''));
 
-        $this->assertSame($expectedDescription, $description->render());
+        $this->assertSameIgnoreLineEndings($expectedDescription, $description->render());
     }
 
     /**

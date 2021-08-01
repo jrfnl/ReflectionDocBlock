@@ -15,7 +15,7 @@ namespace phpDocumentor\Reflection\DocBlock;
 
 use Mockery as m;
 use phpDocumentor\Reflection\DocBlock;
-use PHPUnit\Framework\TestCase;
+use phpDocumentor\Reflection\TestCase;
 
 /**
  * @coversDefaultClass \phpDocumentor\Reflection\DocBlock\Serializer
@@ -63,7 +63,7 @@ DOCCOMMENT;
             ]
         );
 
-        $this->assertSame($expected, $fixture->getDocComment($docBlock));
+        $this->assertSameIgnoreLineEndings($expected, $fixture->getDocComment($docBlock));
     }
 
     /**
@@ -98,7 +98,7 @@ DOCCOMMENT;
             ]
         );
 
-        $this->assertSame($expected, $fixture->getDocComment($docBlock));
+        $this->assertSameIgnoreLineEndings($expected, $fixture->getDocComment($docBlock));
     }
 
     /**
@@ -133,7 +133,7 @@ DOCCOMMENT;
             ]
         );
 
-        $this->assertSame($expected, $fixture->getDocComment($docBlock));
+        $this->assertSameIgnoreLineEndings($expected, $fixture->getDocComment($docBlock));
     }
 
     /**
@@ -174,7 +174,7 @@ DOCCOMMENT;
             ]
         );
 
-        $this->assertSame($expected, $fixture->getDocComment($docBlock));
+        $this->assertSameIgnoreLineEndings($expected, $fixture->getDocComment($docBlock));
     }
 
     /**
@@ -198,9 +198,9 @@ DOCCOMMENT_AFTER_REMOVE;
         $genericTag = new DocBlock\Tags\Generic('unknown-tag');
 
         $docBlock = new DocBlock('', null, [$genericTag]);
-        $this->assertSame($expected, $fixture->getDocComment($docBlock));
+        $this->assertSameIgnoreLineEndings($expected, $fixture->getDocComment($docBlock));
 
         $docBlock->removeTag($genericTag);
-        $this->assertSame($expectedAfterRemove, $fixture->getDocComment($docBlock));
+        $this->assertSameIgnoreLineEndings($expectedAfterRemove, $fixture->getDocComment($docBlock));
     }
 }

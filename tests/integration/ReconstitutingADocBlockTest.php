@@ -14,7 +14,6 @@ declare(strict_types=1);
 namespace phpDocumentor\Reflection;
 
 use Mockery as m;
-use PHPUnit\Framework\TestCase;
 
 /**
  * @coversNothing
@@ -38,6 +37,6 @@ class ReconstitutingADocBlockTest extends TestCase
 
         include(__DIR__ . '/../../examples/03-reconstituting-a-docblock.php');
 
-        $this->assertSame($docComment, $reconstitutedDocComment);
+        $this->assertSameIgnoreLineEndings($docComment, $reconstitutedDocComment);
     }
 }
